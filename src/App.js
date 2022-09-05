@@ -105,10 +105,6 @@ function App() {
 
 
   onkeydown = (e) => {
-    for (let i = 0; i < 10; i++) {
-      if (e.key == i.toString())
-        writeNumber(e.key)
-    }
     switch (e.key) {
       case '%': percentage()
         break
@@ -126,6 +122,13 @@ function App() {
         break
       case 'c': clear()
         break
+      case '.' :if (!value.includes('.'))  writeNumber('.')
+        break
+      default : 
+        for (let i = 0; i < 10; i++) {
+        if (e.key == i.toString())
+          writeNumber(e.key)
+      }
     }
   }
 
